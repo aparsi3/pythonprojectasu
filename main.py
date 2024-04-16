@@ -9,14 +9,14 @@ import docx
 app = Flask(__name__)
 
 # Set up OpenAI API key
-openai.api_key = "Api key here"
+openai.api_key = "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"
 
-# FUnction to extract URL
+# Function to extract URL
 def extract_video_id(url):
     video_id = re.search(r'v=([^&]*)', url).group(1)
     return video_id
 
-#Function to download The video 
+# Function to download The video 
 def download_video(url):
     video_id = extract_video_id(url)
     yt = YouTube(url)
@@ -24,7 +24,8 @@ def download_video(url):
     video.download(output_path=".", filename=f"{video_id}.mp4")
     print("Video downloaded successfully!")
     return os.path.abspath(os.path.join(os.getcwd(), f"{video_id}.mp4"))
-# Functoin to to convert video to audio file and get the transcript
+
+# Function to convert video to audio file and get the transcript
 def transcribe_video(video_path):
     aud_file = os.path.join(os.getcwd(), "video.mp3")
     video = VideoFileClip(video_path)
@@ -48,9 +49,8 @@ def transcribe_video(video_path):
     except Exception as e:
         print(f"Failed to transcribe audio: {e}")
 
-#Function to summarize the Transcript
+# Function to summarize the Transcript
 def summarize_text_file_to_word(file_path):
-
     # Load the text file
     with open(file_path, 'r') as file:
         text = file.read()
@@ -77,15 +77,24 @@ def summarize_text_file_to_word(file_path):
 # Function to run the program
 def run_program():
     url = request.form.get("url")
+    print(f"Received URL: {url}")
     video_path = download_video(url)
     transcribe_video(video_path)
-    summarize_text_file_to_word(file_path)
-#Website cration using flask
+    summarize_text_file_to_word("transcript.txt")
+
+# Website creation using Flask
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         run_program()
     return render_template("index.html")
+
+# Add this decorator to handle the /summarize route
+@app.route("/summarize", methods=["POST"])
+def summarize():
+    # Call the run_program function here
+    run_program()
+    return "Summary created!"
 
 if __name__ == "__main__":
     app.run(debug=True)
