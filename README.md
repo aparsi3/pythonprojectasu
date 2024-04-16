@@ -1,6 +1,4 @@
-# pythonprojectasu
-MFG 598
-Here's the README file for your Flask application:
+Here's the revised README file with spelling corrections and improved presentation:
 
 ---
 
@@ -14,7 +12,7 @@ Ensure you have the following installed:
 
 - Python 3.x
 - Flask
-- Required Python packages (`pytube`, `moviepy`, `openai-python`, `docx`)
+- Required Python packages (`pytube`, `moviepy`, `openai-python`, `python-docx`)
 
 You'll also need an OpenAI API key to transcribe the audio and generate the summary.
 
@@ -48,11 +46,18 @@ python app.py
 
 5. Wait for the application to download the video, transcribe its audio, summarize the transcript, and save the summary in a Word document.
 
-## Important 
-1.Make sure TO create the Api key for open Ai 
-2.Make sure to add index.html file in the templates folder
-3.Make sure you have given right path for storing all the data 
+## Important Considerations
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
+1. Make sure to create an API key for OpenAI.
 
----
+2. Ensure to add an `index.html` file in the `templates` folder.
+
+3. Verify that you have provided the correct path for storing all the data.
+
+4. This application will work for every language as long as OpenAI has support for that language.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+--- 
