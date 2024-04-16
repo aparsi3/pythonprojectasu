@@ -1,4 +1,3 @@
-Here's the revised README file with spelling corrections and improved presentation:
 
 ---
 
@@ -59,5 +58,11 @@ python app.py
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## About the Author
+
+This project was created by Abhishek Parsi.
+
+- ASU Employee ID: 1232410181
 
 --- 
