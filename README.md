@@ -48,7 +48,10 @@ python app.py
 
 5. Wait for the application to download the video, transcribe its audio, summarize the transcript, and save the summary in a Word document.
 
-## Contributing
+## Important 
+1.Make sure TO create the Api key for open Ai 
+2.Make sure to add index.html file in the templates folder
+3.Make sure you have given right path for storing all the data 
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
 
