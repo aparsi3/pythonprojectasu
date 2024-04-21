@@ -9,7 +9,7 @@ import docx
 app = Flask(__name__)
 
 # Set up OpenAI API key
-openai.api_key = "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"
+openai.api_key = "open Api Key here"
 
 # Function to extract URL
 def extract_video_id(url):
