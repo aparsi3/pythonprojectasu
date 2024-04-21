@@ -20,7 +20,7 @@ You'll also need an OpenAI API key to transcribe the audio and generate the summ
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/aparsi3/pythonprojectasu.git
 ```
 
 2. Install the required Python packages:
